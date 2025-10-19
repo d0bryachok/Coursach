@@ -1,0 +1,190 @@
+Таблица Exercises (Упражнения)
+[
+  {
+    "name": "Приседания со штангой",
+    "description": "Базовое упражнение для развития мышц ног",
+    "muscle_group": "Ноги"
+  },
+  {
+    "name": "Жим штанги лежа",
+    "description": "Упражнение для развития грудных мышц",
+    "muscle_group": "Грудь"
+  },
+  {
+    "name": "Становая тяга",
+    "description": "Базовое упражнение для развития мышц спины",
+    "muscle_group": "Спина"
+  },
+  {
+    "name": "Подтягивания",
+    "description": "Упражнение с собственным весом для спины и рук",
+    "muscle_group": "Спина, Бицепс"
+  },
+  {
+    "name": "Отжимания",
+    "description": "Базовое упражнение для груди и трицепса",
+    "muscle_group": "Грудь, Трицепс"
+  },
+  {
+    "name": "Бег на беговой дорожке",
+    "description": "Кардио упражнение для выносливости",
+    "muscle_group": "Ноги, Кардио"
+  },
+  {
+    "name": "Планка",
+    "description": "Упражнение для укрепления кора",
+    "muscle_group": "Пресс"
+  },
+  {
+    "name": "Выпады с гантелями",
+    "description": "Упражнение для ног и ягодиц",
+    "muscle_group": "Ноги, Ягодицы"
+  }
+]
+
+Таблица Workouts (Тренировки)
+[
+  {
+    "title": "Силовая тренировка - грудь и спина",
+    "workout_type": "Силовая",
+    "duration_minutes": 90,
+    "calories_burned": 450,
+    "date": "2024-01-15",
+    "notes": "Тяжелая тренировка, хорошее самочувствие"
+  },
+  {
+    "title": "Утреннее кардио",
+    "workout_type": "Кардио",
+    "duration_minutes": 45,
+    "calories_burned": 300,
+    "date": "2024-01-16",
+    "notes": "Бег на дорожке, интервалы"
+  },
+  {
+    "title": "Круговая тренировка всего тела",
+    "workout_type": "Круговая",
+    "duration_minutes": 60,
+    "calories_burned": 400,
+    "date": "2024-01-17",
+    "notes": "3 круга, высокая интенсивность"
+  },
+  {
+    "title": "Йога и растяжка",
+    "workout_type": "Йога",
+    "duration_minutes": 30,
+    "calories_burned": 150,
+    "date": "2024-01-18",
+    "notes": "Восстановительная тренировка"
+  },
+  {
+    "title": "Тренировка ног",
+    "workout_type": "Силовая",
+    "duration_minutes": 75,
+    "calories_burned": 380,
+    "date": "2024-01-19",
+    "notes": "Приседания и выпады"
+  }
+]
+
+Таблица Progress (Прогресс)[
+  {
+    "date": "2024-01-01",
+    "weight": 75.5,
+    "height": 180.0,
+    "body_fat_percentage": 18.5,
+    "muscle_mass": 35.2,
+    "notes": "Начальные замеры, начало программы"
+  },
+  {
+    "date": "2024-01-08",
+    "weight": 75.0,
+    "body_fat_percentage": 18.2,
+    "muscle_mass": 35.5,
+    "notes": "Первая неделя тренировок, вес немного снизился"
+  },
+  {
+    "date": "2024-01-15",
+    "weight": 74.8,
+    "body_fat_percentage": 17.8,
+    "muscle_mass": 35.8,
+    "notes": "Две недели, прогресс в силовых показателях"
+  },
+  {
+    "date": "2024-01-22",
+    "weight": 74.5,
+    "body_fat_percentage": 17.5,
+    "muscle_mass": 36.0,
+    "notes": "Три недели, мышечная масса растет"
+  },
+  {
+    "date": "2024-01-29",
+    "weight": 74.2,
+    "body_fat_percentage": 17.2,
+    "muscle_mass": 36.2,
+    "notes": "Месяц тренировок, отличные результаты"
+  }
+]
+
+Таблица WorkoutExercises (Упражнения в тренировках)
+[
+  {
+    "workout_id": 1,
+    "exercise_id": 2,
+    "sets": 4,
+    "reps": 8,
+    "weight_kg": 70.0
+  },
+  {
+    "workout_id": 1,
+    "exercise_id": 3,
+    "sets": 3,
+    "reps": 6,
+    "weight_kg": 100.0
+  },
+  {
+    "workout_id": 1,
+    "exercise_id": 4,
+    "sets": 3,
+    "reps": 10
+  },
+  {
+    "workout_id": 2,
+    "exercise_id": 6,
+    "sets": 1,
+    "duration_seconds": 2700
+  },
+  {
+    "workout_id": 3,
+    "exercise_id": 1,
+    "sets": 3,
+    "reps": 12,
+    "weight_kg": 50.0
+  },
+  {
+    "workout_id": 3,
+    "exercise_id": 5,
+    "sets": 3,
+    "reps": 15
+  },
+  {
+    "workout_id": 3,
+    "exercise_id": 7,
+    "sets": 3,
+    "duration_seconds": 60
+  },
+  {
+    "workout_id": 5,
+    "exercise_id": 1,
+    "sets": 5,
+    "reps": 8,
+    "weight_kg": 80.0
+  },
+  {
+    "workout_id": 5,
+    "exercise_id": 8,
+    "sets": 4,
+    "reps": 10,
+    "weight_kg": 15.0
+  }
+]
+

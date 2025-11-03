@@ -1,0 +1,715 @@
+{
+	"info": {
+		"_postman_id": "532d1dc0-c114-422b-9edd-70ef32c96cba",
+		"name": "Fitness_tracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48674841",
+		"_collection_link": "https://vasya-lebedev-99-99-9623442.postman.co/workspace/D0brya40k-777's-Workspace~63ef2d89-0655-4d9c-8576-f99609eba2ee/collection/48674841-532d1dc0-c114-422b-9edd-70ef32c96cba?action=share&source=collection_link&creator=48674841"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "Workouts",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.response.to. have.status (200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"pm.response.to. have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"pm.expect(pm.response.text()).to.include(\"workout_id\");\r",
+									"pm.expect(pm.response.text()).to.include(\"title\");\r",
+									"pm.expect(pm.response.text()).to.include(\"workout_type\");\r",
+									"pm.expect(pm.response.text()).to.include(\"duration_minutes\");\r",
+									"pm.expect(pm.response.text()).to.include(\"calories_burned\");\r",
+									"pm.expect(pm.response.text()).to.include(\"date\");\r",
+									"pm.expect(pm.response.text()).to.include(\"notes\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/workouts",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"workouts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/workout-exercises/{workout_id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/workout-exercises/:workout_id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"workout-exercises",
+								":workout_id"
+							],
+							"variable": [
+								{
+									"key": "workout_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "exercises",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/exercises",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"exercises"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "progress",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/progress",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"progress"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/stats/workouts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/stats/workouts",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"stats",
+								"workouts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/stats/progress",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/stats/progress",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"stats",
+								"progress"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "New_workouts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to. have.status (200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to. have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"workout_id\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"message\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"workout_id\" : 1,\r\n    \"title\" : \"asdasd\",\r\n    \"workout_type\" : \"asdasdasd\",\r\n    \"duration_minutes\" : 4,\r\n    \"date\" : \"4\",\r\n    \"calories_burned\" : 4,\r\n    \"notes\" : \"4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/workouts/?workout_id=4&title=asdasd&workout_type=asdasdasd&duration_minutes=4&date=4&calories_burned=4&notes=4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"workouts",
+								""
+							],
+							"query": [
+								{
+									"key": "workout_id",
+									"value": "4"
+								},
+								{
+									"key": "title",
+									"value": "asdasd"
+								},
+								{
+									"key": "workout_type",
+									"value": "asdasdasd"
+								},
+								{
+									"key": "duration_minutes",
+									"value": "4"
+								},
+								{
+									"key": "date",
+									"value": "4"
+								},
+								{
+									"key": "calories_burned",
+									"value": "4"
+								},
+								{
+									"key": "notes",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New_exercises",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/exercises",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"exercises"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New_progress",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/progress",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"progress"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New_workout-exercises",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/workout-exercises",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"workout-exercises"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DELETE",
+			"item": [
+				{
+					"name": "Delete_Workout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to. have.status (200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to. have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"message\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/workouts/:workout_id?workout_id=4&title=asdasd&workout_type=asdasdasd&duration_minutes=4&date=4&calories_burned=4&notes=4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"workouts",
+								":workout_id"
+							],
+							"query": [
+								{
+									"key": "workout_id",
+									"value": "4"
+								},
+								{
+									"key": "title",
+									"value": "asdasd"
+								},
+								{
+									"key": "workout_type",
+									"value": "asdasdasd"
+								},
+								{
+									"key": "duration_minutes",
+									"value": "4"
+								},
+								{
+									"key": "date",
+									"value": "4"
+								},
+								{
+									"key": "calories_burned",
+									"value": "4"
+								},
+								{
+									"key": "notes",
+									"value": "4"
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "workout_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_exercise",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/exercises/:exercise_id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"exercises",
+								":exercise_id"
+							],
+							"variable": [
+								{
+									"key": "exercise_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/progress/progress_id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/progress/:progress_id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"progress",
+								":progress_id"
+							],
+							"variable": [
+								{
+									"key": "progress_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/workout-exercises/workout_exercise_id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/workout-exercises/:workout_exercise_id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"workout-exercises",
+								":workout_exercise_id"
+							],
+							"variable": [
+								{
+									"key": "workout_exercise_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PUT",
+			"item": [
+				{
+					"name": "/workouts/workout_id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to. have.status (200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to. have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"error\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/workouts/:workout_id?workout_id=1&title=asdasd&workout_type=asdasdasd&duration_minutes=4&date=4&calories_burned=4&notes=4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"workouts",
+								":workout_id"
+							],
+							"query": [
+								{
+									"key": "workout_id",
+									"value": "1"
+								},
+								{
+									"key": "title",
+									"value": "asdasd"
+								},
+								{
+									"key": "workout_type",
+									"value": "asdasdasd"
+								},
+								{
+									"key": "duration_minutes",
+									"value": "4"
+								},
+								{
+									"key": "date",
+									"value": "4"
+								},
+								{
+									"key": "calories_burned",
+									"value": "4"
+								},
+								{
+									"key": "notes",
+									"value": "4"
+								}
+							],
+							"variable": [
+								{
+									"key": "workout_id",
+									"value": "1",
+									"description": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/exercises/exercise_id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/exercises/:exercise_id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"exercises",
+								":exercise_id"
+							],
+							"variable": [
+								{
+									"key": "exercise_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/progress/progress_id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/progress/:progress_id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"progress",
+								":progress_id"
+							],
+							"variable": [
+								{
+									"key": "progress_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/workout-exercises/workout_exercise_id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/workout-exercises/:workout_exercise_id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"workout-exercises",
+								":workout_exercise_id"
+							],
+							"variable": [
+								{
+									"key": "workout_exercise_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
